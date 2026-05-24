@@ -19,6 +19,7 @@
  *  collision   | CollisionLab     | /collisionlab/   | #a78bfa
  *  morning     | Morning Pages    | /morningpages/   | #8b7355
  *  sense       | SenseSpark       | /sensespark/     | #E8453C
+ *  blog        | Field Notes      | /blog/           | #d4a853 (gold)
  *
  * ── HOW TO ADD TO A PAGE ───────────────────────────────────────────
  *
@@ -105,14 +106,15 @@
   'use strict';
 
   // ── App definitions ────────────────────────────────────────────────
-  var HOMEPAGE_HREF = 'homepage/';
+  var HOMEPAGE_HREF = '/homepage/';
 
   var APPS = [
-    { key: 'zest',      label: 'Undercover Zest', short: 'Zest',      href: './',              match: ['/index.html', '/'] },
-    { key: 'rhyme',     label: 'RhymeForge',      short: 'Rhyme',     href: 'rhymeforge/',   match: ['/rhymeforge'] },
-    { key: 'collision', label: 'CollisionLab',     short: 'Collision', href: 'collisionlab/', match: ['/collisionlab'] },
-    { key: 'morning',   label: 'Morning Pages',    short: 'Morning',   href: 'morningpages/', match: ['/morningpages'] },
-    { key: 'sense',     label: 'SenseSpark',       short: 'Sense',     href: 'sensespark/',   match: ['/sensespark'] },
+    { key: 'zest',      label: 'Undercover Zest', short: 'Zest',      href: '/',              match: ['/index.html', '/'] },
+    { key: 'rhyme',     label: 'RhymeForge',      short: 'Rhyme',     href: '/rhymeforge/',   match: ['/rhymeforge'] },
+    { key: 'collision', label: 'CollisionLab',     short: 'Collision', href: '/collisionlab/', match: ['/collisionlab'] },
+    { key: 'morning',   label: 'Morning Pages',    short: 'Morning',   href: '/morningpages/', match: ['/morningpages'] },
+    { key: 'sense',     label: 'SenseSpark',       short: 'Sense',     href: '/sensespark/',   match: ['/sensespark'] },
+    { key: 'blog',      label: 'Field Notes',     short: 'Blog',      href: '/blog/',         match: ['/blog'] },
   ];
 
   // ── Detect active page ─────────────────────────────────────────────
@@ -178,6 +180,18 @@
       '<path d="M36 22 L40 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/></svg>';
   }
 
+  function iconBlog(sz) {
+    // Quill drawing a wave-line on lined paper — "field notes" feel.
+    return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 48 48" fill="none">' +
+      // page corner
+      '<path d="M14 9 H30 L36 15 V38 H14 Z" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linejoin="round"/>' +
+      '<path d="M30 9 V15 H36" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round" opacity="0.55"/>' +
+      // ruled lines
+      '<path d="M18 22 H32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>' +
+      '<path d="M18 28 H32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>' +
+      '<path d="M18 34 H28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.28"/></svg>';
+  }
+
   function iconHome(sz) {
     return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 48 48" fill="none">' +
       '<path d="M24 10 L8 24 L12 24 L12 38 L20 38 L20 28 L28 28 L28 38 L36 38 L36 24 L40 24 Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round"/></svg>';
@@ -189,10 +203,11 @@
     rhyme: iconRhyme,
     collision: iconCollision,
     morning: iconMorning,
-    sense: iconSense
+    sense: iconSense,
+    blog: iconBlog
   };
-  var railSz = { home: 34, zest: 34, rhyme: 34, collision: 40, morning: 40, sense: 40 };
-  var dockSz = { home: 44, zest: 44, rhyme: 44, collision: 52, morning: 52, sense: 52 };
+  var railSz = { home: 34, zest: 34, rhyme: 34, collision: 40, morning: 40, sense: 40, blog: 32 };
+  var dockSz = { home: 44, zest: 44, rhyme: 44, collision: 52, morning: 52, sense: 52, blog: 42 };
   var RAIL_H = 52;
 
   // ── Inject CSS ─────────────────────────────────────────────────────
@@ -212,6 +227,7 @@
     '.uz-rail-item[data-app="collision"].uz-active{border-bottom-color:#a78bfa}',
     '.uz-rail-item[data-app="morning"].uz-active{border-bottom-color:#8b7355}',
     '.uz-rail-item[data-app="sense"].uz-active{border-bottom-color:#E8453C}',
+    '.uz-rail-item[data-app="blog"].uz-active{border-bottom-color:#d4a853}',
 
     '/* Lemon FAB */',
     '.uz-lemon-fab{position:fixed;top:.75rem;left:.75rem;z-index:9998;width:42px;height:42px;border-radius:50%;background:rgba(14,14,20,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 6px 24px rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;line-height:1;opacity:0;pointer-events:none;will-change:transform,opacity;transition:border-color .2s,background .2s,box-shadow .2s}',
@@ -234,6 +250,8 @@
     '.uz-dock-item[data-app="morning"].uz-active .uz-dock-label{color:#c4b59a}',
     '.uz-dock-item[data-app="sense"].uz-active{background:rgba(232,69,60,0.12)}',
     '.uz-dock-item[data-app="sense"].uz-active .uz-dock-label{color:#E8453C}',
+    '.uz-dock-item[data-app="blog"].uz-active{background:rgba(212,168,83,0.12)}',
+    '.uz-dock-item[data-app="blog"].uz-active .uz-dock-label{color:#d4a853}',
     '.uz-dock-close{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;cursor:pointer;color:rgba(255,255,255,0.3);font-size:.9rem;transition:all .2s;flex-shrink:0}',
     '.uz-dock-close:hover{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6)}',
 

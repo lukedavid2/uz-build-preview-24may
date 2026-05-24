@@ -12,6 +12,7 @@
     { key: 'collision', match: ['/collisionlab'] },
     { key: 'morning',   match: ['/morningpages'] },
     { key: 'sense',     match: ['/sensespark'] },
+    { key: 'blog',      match: ['/blog'] },
   ];
 
   var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
@@ -35,6 +36,8 @@
           '<span class="uz-footer-sep">&middot;</span>' +
           '<a href="mailto:tidbit-people.1u@icloud.com" class="uz-footer-link">Suggestions?</a>' +
           '<span class="uz-footer-sep">&middot;</span>' +
+          '<a href="/blog/" class="uz-footer-link">Field Notes</a>' +
+          '<span class="uz-footer-sep">&middot;</span>' +
           '<a href="https://ko-fi.com/undercoverzest" target="_blank" rel="noopener noreferrer" class="uz-footer-link uz-footer-coffee">&#9749; Buy me a coffee</a>' +
         '</div>' +
       '</footer>';
@@ -49,6 +52,7 @@
             '</div>' +
           '</div>' +
           '<div class="uz-footer-credit">Made with 🍋 by Luke</div>' +
+          '<div class="uz-footer-links"><a href="/blog/">Field Notes</a> &middot; <a href="mailto:tidbit-people.1u@icloud.com">Contact</a></div>' +
           '<div class="uz-footer-contact">We love hearing from you if you have any suggestions, or love: <a href="mailto:tidbit-people.1u@icloud.com">Contact me</a></div>' +
         '</div>' +
       '</footer>';
@@ -367,6 +371,9 @@
     '.uz-footer--full .uz-donation-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(200, 160, 74, 0.5); }',
     '.uz-footer--full .uz-support-desc { font-size: 13px; color: #999; margin-bottom: 12px; }',
     '.uz-footer--full .uz-footer-credit { font-size: 13px; color: #777; margin-top: 12px; }',
+    '.uz-footer--full .uz-footer-links { font-size: 12px; color: #888; margin-top: 8px; }',
+    '.uz-footer--full .uz-footer-links a { color: #d4a853; text-decoration: none; font-weight: 600; }',
+    '.uz-footer--full .uz-footer-links a:hover { color: #e3b95a; text-decoration: underline; }',
     '.uz-footer--full .uz-footer-contact { font-size: 12px; color: #777; margin-top: 10px; }',
     '.uz-footer--full .uz-footer-contact a { color: #d4a853; text-decoration: none; font-weight: 600; }',
     '.uz-footer--compact { margin: 0; padding: 0; border: none; background: transparent; }',

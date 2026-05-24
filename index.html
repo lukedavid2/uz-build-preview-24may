@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Build chord progressions in any key, visualise scales on the fretboard, use the built-in tuner and arpeggiator. A free, interactive guitar songwriting tool. No sign-up required.">
+  <meta name="keywords" content="chord progression generator, guitar songwriting tool, chord progressions in key, music theory, scale finder, arpeggiator, guitar tuner, free songwriting tool">
   <meta name="theme-color" content="#d4a745">
   <meta property="og:title" content="Undercover Zest — Guitar Chord Progression Builder">
+  <meta property="og:description" content="Build chord progressions in any key, visualise scales, and explore music theory. Free interactive tool for songwriters.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://undercoverzest.app/">
   <meta property="og:image" content="https://undercoverzest.app/lemon-logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Undercover Zest — Guitar Chord Progression Builder">
+  <meta name="twitter:description" content="Build chord progressions in any key. Free interactive songwriting tool with scale visualiser, tuner, and arpeggiator.">
+  <link rel="canonical" href="https://undercoverzest.app/">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="lemon-logo.png">
@@ -75,7 +82,7 @@
     <div style="max-width:640px;margin:60px auto;padding:0 24px;text-align:center;font-family:Outfit,sans-serif;color:#e0e0e0;">
       <h1 style="font-size:1.8rem;font-weight:700;color:#d4a745;margin-bottom:12px;">Undercover Zest — Guitar Chord Progression Builder</h1>
       <p style="font-size:1.05rem;line-height:1.7;color:#bbb;margin-bottom:16px;">Build chord progressions in any key, visualise scales on the fretboard, use the built-in tuner and arpeggiator.</p>
-      <p style="font-size:0.9rem;color:#888;">Part of the <a href="homepage/" style="color:#d4a745;text-decoration:underline;">Undercover Zest</a> songwriting suite.</p>
+      <p style="font-size:0.9rem;color:#888;">Part of the <a href="/homepage/" style="color:#d4a745;text-decoration:underline;">Undercover Zest</a> songwriting suite.</p>
     </div>
   </noscript>
   <div class="container">
@@ -248,7 +255,7 @@
       </div>
     </div>
 
-    <a href="rhymeforge/" class="rf-banner">
+    <a href="/rhymeforge/" class="rf-banner">
       <div class="rf-banner-top">
         <img src="lemon-logo.png" alt="" class="rf-banner-lemon" onerror="this.style.display='none'">
         <div class="rf-banner-from">Also from Undercover Zest</div>
@@ -328,7 +335,7 @@
       if (tutorialBtn) { tutorialBtn.addEventListener('click', function(e) { e.preventDefault(); showModal(); }); }
       window.uzShowTutorial = showModal;
       if (gotItBtn) { gotItBtn.addEventListener('click', function() { markAsVisited(); hideModal(); }); }
-      if (learnMoreBtn) { learnMoreBtn.addEventListener('click', function() { window.location.href = 'homepage/'; }); }
+      if (learnMoreBtn) { learnMoreBtn.addEventListener('click', function() { window.location.href = '/homepage/'; }); }
       if (modal) { modal.addEventListener('click', function(e) { if (e.target === modal) hideModal(); }); }
     })();
   </script>

@@ -105,14 +105,14 @@
   'use strict';
 
   // ── App definitions ────────────────────────────────────────────────
-  var HOMEPAGE_HREF = '../homepage/';
+  var HOMEPAGE_HREF = '/homepage/';
 
   var APPS = [
-    { key: 'zest',      label: 'Undercover Zest', short: 'Zest',      href: '../',              match: ['/index.html', '/'] },
-    { key: 'rhyme',     label: 'RhymeForge',      short: 'Rhyme',     href: '../rhymeforge/',   match: ['/rhymeforge'] },
-    { key: 'collision', label: 'CollisionLab',     short: 'Collision', href: '../collisionlab/', match: ['/collisionlab'] },
-    { key: 'morning',   label: 'Morning Pages',    short: 'Morning',   href: '../morningpages/', match: ['/morningpages'] },
-    { key: 'sense',     label: 'SenseSpark',       short: 'Sense',     href: '../sensespark/',   match: ['/sensespark'] },
+    { key: 'zest',      label: 'Undercover Zest', short: 'Zest',      href: '/',              match: ['/index.html', '/'] },
+    { key: 'rhyme',     label: 'RhymeForge',      short: 'Rhyme',     href: '/rhymeforge/',   match: ['/rhymeforge'] },
+    { key: 'collision', label: 'CollisionLab',     short: 'Collision', href: '/collisionlab/', match: ['/collisionlab'] },
+    { key: 'morning',   label: 'Morning Pages',    short: 'Morning',   href: '/morningpages/', match: ['/morningpages'] },
+    { key: 'sense',     label: 'SenseSpark',       short: 'Sense',     href: '/sensespark/',   match: ['/sensespark'] },
   ];
 
   // ── Detect active page ─────────────────────────────────────────────
